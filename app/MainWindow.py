@@ -10,10 +10,11 @@ from Pages import *
 
 class MainWindow(Window):
     def __init__(self):
+        #self.DataContext = Main
         pass
 
     def new(self):
-        stream = StreamReader(os.path.join(os.path.dirname(__file__), "MainWindow.xaml"))
+        stream = StreamReader("MainWindow.xaml")
         xaml = XamlReader.Load(stream.BaseStream)
         self.mainWindow = LogicalTreeHelper.FindLogicalNode(xaml, "MainWindow")
         self.mainWindow.Loaded += RoutedEventHandler(self.mainWindow_Loaded)

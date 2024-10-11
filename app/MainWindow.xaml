@@ -1,8 +1,39 @@
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Python.NET with WPF" Height="450" Width="800"
+        Title="WPF APP + Custom Controls with Python.NET"
+        Background="{DynamicResource ColorNeutralBackground1Brush}"
+        Height="450" Width="800"
         x:Name="MainWindow">
-    <Grid>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+    <!--
+    <Window.Resources>
+        <Storyboard x:Key="ShowToast" Completed="ShowToast_Completed">
+            <DoubleAnimation AutoReverse="True" Duration="0:0:4.0" Storyboard.TargetName="ToastContainer" Storyboard.TargetProperty="Opacity" From="0" To="1">
+                <DoubleAnimation.EasingFunction>
+                    <PowerEase Power="10" EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+    </Window.Resources>
+    -->
+    <Grid Margin="7">
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" ItemsSource="{Binding ThemeTypeList}" SelectedItem="{Binding SelectedThemeType}" DisplayMemberPath="Text" SelectedIndex="0" />
+        <ListBox Margin="0,40,0,0" HorizontalAlignment="Left" Width="200" SelectionMode="Single" DisplayMemberPath="Text" ItemsSource="{Binding ListBoxList}" SelectedItem="{Binding SelectedListBoxItem}" />
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="205,0,0,0" />
+        <Rectangle x:Name="DialogDimmed" Fill="Black" Opacity="0.7" Visibility="Hidden" />
+        <Grid x:Name="PopupContainer" Visibility="Hidden">
+            <Rectangle Fill="Black" Opacity="0.7" />
+        </Grid>
+        <StackPanel x:Name="ToastContainer" Visibility="Hidden">
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Setter Property="VerticalAlignment" Value="Bottom" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="0,0,0,14" />
+                </Style>
+            </StackPanel.Style>
+            <Border Background="Gray" Padding="7">
+                <TextBlock x:Name="ToastMessage" />
+            </Border>
+        </StackPanel>
     </Grid>
 </Window>
