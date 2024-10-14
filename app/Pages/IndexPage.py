@@ -11,12 +11,12 @@ from System.Windows.Controls import *
 from System.Windows.Markup import *
 from System.Windows.Media.Imaging import *
 
-class MainPage(Page):
+class IndexPage(Page):
     def __init__(self):
         pass
 
     def new(self):
-        stream = StreamReader(os.path.join("Pages", "MainPage.xaml"))
+        stream = StreamReader(os.path.join("Pages", "IndexPage.xaml"))
         xaml = XamlReader.Load(stream.BaseStream)
         self.button1 = LogicalTreeHelper.FindLogicalNode(xaml, "Button1")
         self.image1 = LogicalTreeHelper.FindLogicalNode(xaml, "Image1")

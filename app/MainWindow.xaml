@@ -16,7 +16,7 @@
     </Window.Resources>
     -->
     <Grid Margin="7">
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" ItemsSource="{Binding ThemeTypeList}" SelectedItem="{Binding SelectedThemeType}" DisplayMemberPath="Text" SelectedIndex="0" />
+        <ComboBox x:Name="ThemeTypeList" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" DisplayMemberPath="Text" SelectedIndex="0" />
         <ListBox Margin="0,40,0,0" HorizontalAlignment="Left" Width="200" SelectionMode="Single" DisplayMemberPath="Text" ItemsSource="{Binding ListBoxList}" SelectedItem="{Binding SelectedListBoxItem}" />
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="205,0,0,0" />
         <Rectangle x:Name="DialogDimmed" Fill="Black" Opacity="0.7" Visibility="Hidden" />

@@ -1,0 +1,240 @@
+﻿<Page x:Class="WpfMvvmApp.Views.ColorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfMvvmApp.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+    <Page.Resources>
+        <Style x:Key="BackgroundBorder" TargetType="{x:Type Border}">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="4" />
+            <Setter Property="Margin" Value="0,0,4,4" />
+        </Style>
+        <Style x:Key="ForegroundText" TargetType="{x:Type TextBlock}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="15,10,15,10" />
+        </Style>
+    </Page.Resources>
+    <ScrollViewer>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock Text="Button" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
+            <WrapPanel Orientation="Horizontal">
+                <Border Background="{DynamicResource ColorNeutralBackground1Brush}" BorderBrush="{DynamicResource ColorNeutralStroke1Brush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorNeutralForeground1Brush}" Text="Default >" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorNeutralBackground1HoverBrush}" BorderBrush="{DynamicResource ColorNeutralStroke1HoverBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorNeutralForeground1Brush}" Text="Hover" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorNeutralBackground1PressedBrush}" BorderBrush="{DynamicResource ColorNeutralStroke1PressedBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorNeutralForeground1Brush}" Text="Pressed" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorNeutralBackground1SelectedBrush}" BorderBrush="{DynamicResource ColorNeutralStroke1SelectedBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorNeutralForeground1Brush}" Text="Selected" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorNeutralBackgroundDisabledBrush}" BorderBrush="{DynamicResource ColorNeutralStrokeDisabledBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorNeutralForegroundDisabledBrush}" Text="Disabled" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorBrandBackgroundBrush}" BorderBrush="Transparent" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorNeutralForegroundOnBrandBrush}" Text="Brand >" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorBrandBackgroundHoverBrush}" BorderBrush="Transparent" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorNeutralForegroundOnBrandBrush}" Text="Hover" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorBrandBackgroundPressedBrush}" BorderBrush="Transparent" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorNeutralForegroundOnBrandBrush}" Text="Pressed" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorBrandBackgroundSelectedBrush}" BorderBrush="Transparent" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorNeutralForegroundOnBrandBrush}" Text="Selected" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorNeutralBackgroundDisabledBrush}" BorderBrush="Transparent" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorNeutralForegroundDisabledBrush}" Text="Disabled" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorBrandBackground2Brush}" BorderBrush="{DynamicResource ColorBrandStroke2Brush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorBrandForeground2Brush}" Text="Brand2 >" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorBrandBackground2HoverBrush}" BorderBrush="{DynamicResource ColorBrandStroke2HoverBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorBrandForeground2HoverBrush}" Text="Hover" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorBrandBackground2PressedBrush}" BorderBrush="{DynamicResource ColorBrandStroke2PressedBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorBrandForeground2PressedBrush}" Text="Pressed" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorBrandBackground2HoverBrush}" BorderBrush="{DynamicResource ColorBrandStroke2HoverBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorBrandForeground2HoverBrush}" Text="Selected" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorNeutralBackgroundDisabledBrush}" BorderBrush="{DynamicResource ColorNeutralStrokeDisabledBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorNeutralForegroundDisabledBrush}" Text="Disabled" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="Transparent" BorderBrush="Transparent" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorBrandForegroundLinkBrush}" Text="Link >" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorNeutralBackground1HoverBrush}" BorderBrush="Transparent" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorBrandForegroundLinkHoverBrush}" Text="Hover" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorNeutralBackground1PressedBrush}" BorderBrush="Transparent" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorBrandForegroundLinkPressedBrush}" Text="Pressed" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="Transparent" BorderBrush="Transparent" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorBrandForegroundLinkSelectedBrush}" Text="Selected" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="Transparent" BorderBrush="Transparent" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorNeutralForegroundDisabledBrush}" Text="Disabled" Style="{StaticResource ForegroundText}" />
+                </Border>
+            </WrapPanel>
+            <TextBlock Text="Palette" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
+            <WrapPanel Orientation="Horizontal">
+                <Border Background="{DynamicResource ColorPaletteRedBackground1Brush}" BorderBrush="{DynamicResource ColorPaletteRedBorder1Brush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteRedForeground1Brush}" Text="Red1" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteRedBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteRedBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteRedForeground2Brush}" Text="Red2" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteGreenBackground1Brush}" BorderBrush="{DynamicResource ColorPaletteGreenBorder1Brush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteGreenForeground1Brush}" Text="Green1" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteGreenBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteGreenBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteGreenForeground2Brush}" Text="Green2" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteDarkOrangeBackground1Brush}" BorderBrush="{DynamicResource ColorPaletteDarkOrangeBorder1Brush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteDarkOrangeForeground1Brush}" Text="DarkOrange1" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteDarkOrangeBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteDarkOrangeBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteDarkOrangeForeground2Brush}" Text="DarkOrange2" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteYellowBackground1Brush}" BorderBrush="{DynamicResource ColorPaletteYellowBorder1Brush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteYellowForeground1Brush}" Text="Yellow1" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteYellowBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteYellowBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteYellowForeground2Brush}" Text="Yellow2" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteBerryBackground1Brush}" BorderBrush="{DynamicResource ColorPaletteBerryBorder1Brush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteBerryForeground1Brush}" Text="Berry1" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteBerryBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteBerryBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteBerryForeground2Brush}" Text="Berry2" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteLightGreenBackground1Brush}" BorderBrush="{DynamicResource ColorPaletteLightGreenBorder1Brush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteLightGreenForeground1Brush}" Text="LightGreen1" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteLightGreenBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteLightGreenBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteLightGreenForeground2Brush}" Text="LightGreen2" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteMarigoldBackground1Brush}" BorderBrush="{DynamicResource ColorPaletteMarigoldBorder1Brush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteMarigoldForeground1Brush}" Text="Marigold1" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteMarigoldBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteMarigoldBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteMarigoldForeground2Brush}" Text="Marigold2" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteDarkRedBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteDarkRedBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteDarkRedForeground2Brush}" Text="DarkRed" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteCranberryBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteCranberryBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteCranberryForeground2Brush}" Text="Cranberry" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPalettePumpkinBackground2Brush}" BorderBrush="{DynamicResource ColorPalettePumpkinBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPalettePumpkinForeground2Brush}" Text="Pumpkin" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPalettePeachBackground2Brush}" BorderBrush="{DynamicResource ColorPalettePeachBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPalettePeachForeground2Brush}" Text="Peach" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteGoldBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteGoldBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteGoldForeground2Brush}" Text="Gold" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteBrassBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteBrassBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteBrassForeground2Brush}" Text="Brass" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteBrownBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteBrownBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteBrownForeground2Brush}" Text="Brown" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteForestBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteForestBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteForestForeground2Brush}" Text="Forest" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteSeafoamBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteSeafoamBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteSeafoamForeground2Brush}" Text="Seafoam" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteDarkGreenBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteDarkGreenBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteDarkGreenForeground2Brush}" Text="DarkGreen" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteLightTealBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteLightTealBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteLightTealForeground2Brush}" Text="LightTeal" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteTealBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteTealBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteTealForeground2Brush}" Text="Teal" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteSteelBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteSteelBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteSteelForeground2Brush}" Text="Steel" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteBlueBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteBlueBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteBlueForeground2Brush}" Text="Blue" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteRoyalBlueBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteRoyalBlueBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteRoyalBlueForeground2Brush}" Text="RoyalBlue" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteCornflowerBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteCornflowerBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteCornflowerForeground2Brush}" Text="Cornflower" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteCornflowerBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteCornflowerBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteCornflowerForeground2Brush}" Text="Cornflower" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteNavyBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteNavyBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteNavyForeground2Brush}" Text="Navy" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteLavenderBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteLavenderBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteLavenderForeground2Brush}" Text="Lavender" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPalettePurpleBackground2Brush}" BorderBrush="{DynamicResource ColorPalettePurpleBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPalettePurpleForeground2Brush}" Text="Purple" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteGrapeBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteGrapeBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteGrapeForeground2Brush}" Text="Grape" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteLilacBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteLilacBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteLilacForeground2Brush}" Text="Lilac" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPalettePinkBackground2Brush}" BorderBrush="{DynamicResource ColorPalettePinkBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPalettePinkForeground2Brush}" Text="Pink" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteMagentaBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteMagentaBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteMagentaForeground2Brush}" Text="Magenta" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPalettePlumBackground2Brush}" BorderBrush="{DynamicResource ColorPalettePlumBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPalettePlumForeground2Brush}" Text="Plum" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteBeigeBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteBeigeBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteBeigeForeground2Brush}" Text="Beige" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteMinkBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteMinkBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteMinkForeground2Brush}" Text="Mink" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPalettePlatinumBackground2Brush}" BorderBrush="{DynamicResource ColorPalettePlatinumBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPalettePlatinumForeground2Brush}" Text="Platinum" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorPaletteAnchorBackground2Brush}" BorderBrush="{DynamicResource ColorPaletteAnchorBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorPaletteAnchorForeground2Brush}" Text="Anchor" Style="{StaticResource ForegroundText}" />
+                </Border>
+            </WrapPanel>
+            <TextBlock Text="Status" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
+            <WrapPanel>
+                <Border Background="{DynamicResource ColorStatusSuccessBackground1Brush}" BorderBrush="{DynamicResource ColorStatusSuccessBorder1Brush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorStatusSuccessForeground1Brush}" Text="Success1" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorStatusSuccessBackground2Brush}" BorderBrush="{DynamicResource ColorStatusSuccessBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorStatusSuccessForeground2Brush}" Text="Success2" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorStatusWarningBackground1Brush}" BorderBrush="{DynamicResource ColorStatusWarningBorder1Brush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorStatusWarningForeground1Brush}" Text="Warning1" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorStatusWarningBackground2Brush}" BorderBrush="{DynamicResource ColorStatusWarningBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorStatusWarningForeground2Brush}" Text="Warning2" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorStatusDangerBackground1Brush}" BorderBrush="{DynamicResource ColorStatusDangerBorder1Brush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorStatusDangerForeground1Brush}" Text="Danger1" Style="{StaticResource ForegroundText}" />
+                </Border>
+                <Border Background="{DynamicResource ColorStatusDangerBackground2Brush}" BorderBrush="{DynamicResource ColorStatusDangerBorderActiveBrush}" Style="{StaticResource BackgroundBorder}">
+                    <TextBlock Foreground="{DynamicResource ColorStatusDangerForeground2Brush}" Text="Danger2" Style="{StaticResource ForegroundText}" />
+                </Border>
+            </WrapPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <StackPanel>
-        <TextBlock Text="Main Page" />
+        <TextBlock Text="Index Page" />
         <Button x:Name="Button1" Content="Click" />
         <Image x:Name="Image1" />
     </StackPanel>
