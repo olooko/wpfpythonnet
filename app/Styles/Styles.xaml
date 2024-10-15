@@ -14,7 +14,7 @@
                                             <ControlTemplate TargetType="{x:Type ToggleButton}">
                                                 <Grid>
                                                     <Border x:Name="Border" CornerRadius="4" BorderThickness="1" BorderBrush="{DynamicResource ColorNeutralStroke1Brush}" Background="{DynamicResource ColorNeutralBackground1Brush}">
-                                                        <Image x:Name="Chevron" Margin="0,0,9,0" Source="/Images/icon-combobox-chevron.png" Width="20" Height="20" HorizontalAlignment="Right" />
+                                                        <Path Margin="0,0,9,0" Fill="{DynamicResource ColorNeutralForeground4Brush}" VerticalAlignment="Center" HorizontalAlignment="Right" Data="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                                                     </Border>
                                                 </Grid>
                                                 <ControlTemplate.Triggers>
@@ -146,18 +146,33 @@
                                         </RepeatButton>
                                     </Track.DecreaseRepeatButton>
                                     <Track.Thumb>
-                                        <Thumb Margin="0,2,0,0" Background="{DynamicResource ColorNeutralStroke1Brush}">
+                                        <Thumb Margin="0,2,0,0">
                                             <Thumb.Style>
                                                 <Style TargetType="{x:Type Thumb}">
                                                     <Setter Property="Template">
                                                         <Setter.Value>
                                                             <ControlTemplate TargetType="{x:Type Thumb}">
-                                                                <Border x:Name="Border" CornerRadius="4" Background="{TemplateBinding Background}" />
-                                                                <ControlTemplate.Triggers>
-                                                                    <Trigger Property="IsMouseOver" Value="true">
-                                                                        <Setter TargetName="Border" Property="Border.Background" Value="{DynamicResource ColorNeutralStroke1HoverBrush}"/>
-                                                                    </Trigger>
-                                                                </ControlTemplate.Triggers>
+                                                                <Border CornerRadius="4">
+                                                                    <Border.Background>
+                                                                        <SolidColorBrush x:Name="Background" Color="{DynamicResource ColorNeutralStroke1}" />
+                                                                    </Border.Background>
+                                                                    <VisualStateManager.VisualStateGroups>
+                                                                        <VisualStateGroup x:Name="CommonStates">
+                                                                            <VisualState x:Name="Normal" />
+                                                                            <VisualState x:Name="MouseOver">
+                                                                                <Storyboard>
+                                                                                    <ColorAnimation Duration="0:0:0.0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Color" To="{DynamicResource ColorNeutralStroke1Hover}" />
+                                                                                </Storyboard>
+                                                                            </VisualState>
+                                                                            <VisualState x:Name="Pressed">
+                                                                                <Storyboard>
+                                                                                    <ColorAnimation Duration="0:0:0.0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Color" To="{DynamicResource ColorNeutralStroke1Pressed}" />
+                                                                                </Storyboard>
+                                                                            </VisualState>
+                                                                            <VisualState x:Name="Disabled" />
+                                                                        </VisualStateGroup>
+                                                                    </VisualStateManager.VisualStateGroups>
+                                                                </Border>
                                                             </ControlTemplate>
                                                         </Setter.Value>
                                                     </Setter>
@@ -211,18 +226,33 @@
                                         </RepeatButton>
                                     </Track.DecreaseRepeatButton>
                                     <Track.Thumb>
-                                        <Thumb Margin="2,0,0,0" Background="{DynamicResource ColorNeutralStroke1Brush}">
+                                        <Thumb Margin="2,0,0,0">
                                             <Thumb.Style>
                                                 <Style TargetType="{x:Type Thumb}">
                                                     <Setter Property="Template">
                                                         <Setter.Value>
                                                             <ControlTemplate TargetType="{x:Type Thumb}">
-                                                                <Border x:Name="Border" CornerRadius="4" Background="{TemplateBinding Background}" />
-                                                                <ControlTemplate.Triggers>
-                                                                    <Trigger Property="IsMouseOver" Value="true">
-                                                                        <Setter TargetName="Border" Property="Border.Background" Value="{DynamicResource ColorNeutralStroke1HoverBrush}"/>
-                                                                    </Trigger>
-                                                                </ControlTemplate.Triggers>
+                                                                <Border CornerRadius="4">
+                                                                    <Border.Background>
+                                                                        <SolidColorBrush x:Name="Background" Color="{DynamicResource ColorNeutralStroke1}" />
+                                                                    </Border.Background>
+                                                                    <VisualStateManager.VisualStateGroups>
+                                                                        <VisualStateGroup x:Name="CommonStates">
+                                                                            <VisualState x:Name="Normal" />
+                                                                            <VisualState x:Name="MouseOver">
+                                                                                <Storyboard>
+                                                                                    <ColorAnimation Duration="0:0:0.0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Color" To="{DynamicResource ColorNeutralStroke1Hover}" />
+                                                                                </Storyboard>
+                                                                            </VisualState>
+                                                                            <VisualState x:Name="Pressed">
+                                                                                <Storyboard>
+                                                                                    <ColorAnimation Duration="0:0:0.0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Color" To="{DynamicResource ColorNeutralStroke1Pressed}" />
+                                                                                </Storyboard>
+                                                                            </VisualState>
+                                                                            <VisualState x:Name="Disabled" />
+                                                                          </VisualStateGroup>
+                                                                    </VisualStateManager.VisualStateGroups>
+                                                                </Border>
                                                             </ControlTemplate>
                                                         </Setter.Value>
                                                     </Setter>
@@ -329,7 +359,31 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="BrandButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+    <Style x:Key="Type1BrandButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Foreground" Value="{DynamicResource ColorNeutralForegroundOnBrandBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ColorBrandBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource ColorNeutralForegroundOnBrandBrush}" />
+                <Setter Property="Background" Value="{DynamicResource ColorBrandBackgroundHoverBrush}" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource ColorNeutralForegroundOnBrandBrush}" />
+                <Setter Property="Background" Value="{DynamicResource ColorBrandBackgroundPressedBrush}" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource ColorNeutralForegroundDisabledBrush}" />
+                <Setter Property="Background" Value="{DynamicResource ColorNeutralBackgroundDisabledBrush}" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="Type2BrandButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Foreground" Value="{DynamicResource ColorBrandForeground2Brush}" />
         <Setter Property="Background" Value="{DynamicResource ColorBrandBackground2Brush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource ColorBrandStroke2Brush}" />
@@ -347,17 +401,36 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="LinkButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Foreground" Value="{DynamicResource ColorBrandForegroundLinkBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource ColorBrandForegroundLinkHoverBrush}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource ColorBrandForegroundLinkPressedBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource ColorNeutralForegroundDisabledBrush}" />
+                <Setter Property="Background" Value="Transparent" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <Style TargetType="{x:Type RadioButton}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
                     <StackPanel Orientation="Horizontal">
-                        <Ellipse x:Name="Circle" Width="22" Height="22" Stroke="{DynamicResource ColorBrandForeground2Brush}" StrokeThickness="1" />
+                        <Ellipse x:Name="Circle" Width="22" Height="22" Stroke="{DynamicResource ColorNeutralForeground1Brush}" StrokeThickness="1" />
                         <ContentPresenter />
                     </StackPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Circle" Property="Fill" Value="{DynamicResource ColorBrandForeground2Brush}" />
+                            <Setter TargetName="Circle" Property="Fill" Value="{DynamicResource ColorNeutralForeground1Brush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
