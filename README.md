@@ -1,2 +1,2 @@
 # wpfpythonnet
-Python.NET with WPF
+WPF APP + Custom Controls with Python.NET
