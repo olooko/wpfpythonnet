@@ -47,6 +47,7 @@ class MainWindow(WindowBase):
         contents = List[String]()
         contents.Add("Color")
         contents.Add("Button")
+        contents.Add("TextBox")
         self.contentList.ItemsSource = contents
         self.navigate(IndexPage().object())
 
@@ -69,3 +70,5 @@ class MainWindow(WindowBase):
                 self.navigate(ColorPage().object())
             case 1:
                 self.navigate(ButtonPage().object())
+            case 2:
+                self.navigate(TextBoxPage().object())

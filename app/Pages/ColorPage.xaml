@@ -13,7 +13,7 @@
     </Page.Resources>
     <ScrollViewer>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-            <TextBlock Text="Button" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
+            <TextBlock Text="Button" Foreground="{DynamicResource ColorNeutralForeground4Brush}" />
             <WrapPanel Orientation="Horizontal">
                 <Border Background="{DynamicResource ColorNeutralBackground1Brush}" BorderBrush="{DynamicResource ColorNeutralStroke1Brush}" Style="{StaticResource BackgroundBorder}">
                     <TextBlock Foreground="{DynamicResource ColorNeutralForeground1Brush}" Text="Default >" Style="{StaticResource ForegroundText}" />
@@ -76,7 +76,7 @@
                     <TextBlock Foreground="{DynamicResource ColorNeutralForegroundDisabledBrush}" Text="Disabled" Style="{StaticResource ForegroundText}" />
                 </Border>
             </WrapPanel>
-            <TextBlock Text="Palette" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
+            <TextBlock Text="Palette" Foreground="{DynamicResource ColorNeutralForeground4Brush}" />
             <WrapPanel Orientation="Horizontal">
                 <Border Background="{DynamicResource ColorPaletteRedBackground1Brush}" BorderBrush="{DynamicResource ColorPaletteRedBorder1Brush}" Style="{StaticResource BackgroundBorder}">
                     <TextBlock Foreground="{DynamicResource ColorPaletteRedForeground1Brush}" Text="Red1" Style="{StaticResource ForegroundText}" />
@@ -208,7 +208,7 @@
                     <TextBlock Foreground="{DynamicResource ColorPaletteAnchorForeground2Brush}" Text="Anchor" Style="{StaticResource ForegroundText}" />
                 </Border>
             </WrapPanel>
-            <TextBlock Text="Status" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
+            <TextBlock Text="Status" Foreground="{DynamicResource ColorNeutralForeground4Brush}" />
             <WrapPanel>
                 <Border Background="{DynamicResource ColorStatusSuccessBackground1Brush}" BorderBrush="{DynamicResource ColorStatusSuccessBorder1Brush}" Style="{StaticResource BackgroundBorder}">
                     <TextBlock Foreground="{DynamicResource ColorStatusSuccessForeground1Brush}" Text="Success1" Style="{StaticResource ForegroundText}" />

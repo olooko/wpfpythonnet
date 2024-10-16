@@ -1,0 +1,12 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <StackPanel Width="200" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Binding Value" Foreground="{DynamicResource ColorNeutralForeground4Brush}" />
+            <Rectangle Height="4" />
+            <TextBox x:Name="TextBox" />
+            <Rectangle Height="4" />
+            <Button x:Name="Button" Content="Apply" />
+        </StackPanel>
+    </Grid>
+</Page>
