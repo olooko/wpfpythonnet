@@ -1,6 +1,7 @@
 import os
 import clr
 clr.AddReference(r"wpf\PresentationFramework")
+clr.AddReference(r"wpf\PresentationCore")
 
 from System import *
 from System.Collections.Generic import *
@@ -9,6 +10,7 @@ from System.Windows import *
 from System.Windows.Controls import *
 from System.Windows.Data import *
 from System.Windows.Markup import *
+from System.Windows.Media.Animation import *
 
 from Bases import *
 from Pages import *
@@ -26,9 +28,44 @@ class MainWindow(WindowBase):
         self.themeTypeList.SelectionChanged += RoutedEventHandler(self.themeTypeList_SelectionChanged)
         self.contentList = self.getObject("ContentList")
         self.contentList.SelectionChanged += RoutedEventHandler(self.contentList_SelectionChanged)
+        self.toastContent = self.getObject("ToastContent")
+        self.toastMessage = self.getObject("ToastMessage")
 
-    def navigate(self, page):
-        self.mainFrame.Navigate(page)
+    def navigate(self, page, extraData = None):
+        self.mainFrame.Navigate(page.root())
+        page.extraDataReceived(extraData)
+
+    def goBack(self):
+        self.mainFrame.GoBack()
+
+    def refresh(self):
+        self.mainFrame.Refresh()
+
+    def showToast(self, message):
+        self.toastMessage.Text = message
+        self.toastContent.Visibility = Visibility.Visible
+
+        doubleAnimation = DoubleAnimation()
+        doubleAnimation.From = 0
+        doubleAnimation.To = 1
+        doubleAnimation.Duration = Duration(TimeSpan.FromSeconds(3))
+        doubleAnimation.AutoReverse = True
+
+        powerEase = PowerEase()
+        powerEase.Power = 10
+        powerEase.EasingMode = EasingMode.EaseOut
+        doubleAnimation.EasingFunction = powerEase
+
+        Storyboard.SetTargetName(doubleAnimation, self.toastContent.Name)
+        Storyboard.SetTargetProperty(doubleAnimation, PropertyPath(Border.OpacityProperty))
+
+        showToastStoryBoard = Storyboard()
+        showToastStoryBoard.Children.Add(doubleAnimation)
+        showToastStoryBoard.Completed += RoutedEventHandler(self.showToastStoryBoard_Completed)
+        showToastStoryBoard.Begin(self.toastContent)
+
+    def showToastStoryBoard_Completed(self, sender, e):
+        self.toastContent.Visibility = Visibility.Hidden
 
     def changeTheme(self, theme):
         self.__app.Resources.MergedDictionaries[0].Source = Uri(
@@ -44,12 +81,16 @@ class MainWindow(WindowBase):
         themeTypes.Add("Teams Dark")
         themeTypes.Add("Teams High Contrast")
         self.themeTypeList.ItemsSource = themeTypes
+
         contents = List[String]()
         contents.Add("Color")
         contents.Add("Button")
         contents.Add("TextBox")
+        contents.Add("Toast")
+        contents.Add("Navigate With ExtraData")
         self.contentList.ItemsSource = contents
-        self.navigate(IndexPage().object())
+
+        self.navigate(IndexPage(self))
 
     def themeTypeList_SelectionChanged(self, sender, e):
         match self.themeTypeList.SelectedIndex:
@@ -67,8 +108,12 @@ class MainWindow(WindowBase):
     def contentList_SelectionChanged(self, sender, e):
         match self.contentList.SelectedIndex:
             case 0:
-                self.navigate(ColorPage().object())
+                self.navigate(ColorPage(self))
             case 1:
-                self.navigate(ButtonPage().object())
+                self.navigate(ButtonPage(self))
             case 2:
-                self.navigate(TextBoxPage().object())
+                self.navigate(TextBoxPage(self))
+            case 3:
+                self.navigate(ToastPage(self))
+            case 4:
+                self.navigate(ExtraDataFirstPage(self))

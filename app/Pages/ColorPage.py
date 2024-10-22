@@ -13,5 +13,5 @@ from System.Windows.Media.Imaging import *
 from Bases import *
 
 class ColorPage(PageBase):
-    def __init__(self):
-        super().__init__(__name__)
+    def __init__(self, mainWindow):
+        super().__init__(__name__, mainWindow)

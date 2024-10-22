@@ -9,9 +9,9 @@ from System.Windows.Markup import *
 class WindowBase(Window):
     def __init__(self, name):
         self.xaml = XamlReader.Load(StreamReader("%s.xaml" % name).BaseStream)
-
-    def object(self):
         self.initializeComponents()
+
+    def root(self):
         return self.xaml
 
     def initializeComponents(self):

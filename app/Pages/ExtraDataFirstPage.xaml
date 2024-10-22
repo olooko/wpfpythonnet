@@ -1,0 +1,10 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <StackPanel Width="200" VerticalAlignment="Center">
+            <TextBox x:Name="TextBox" />
+            <Rectangle Height="4" />
+            <Button x:Name="Button" Content="Send Message" />
+        </StackPanel>
+    </Grid>
+</Page>

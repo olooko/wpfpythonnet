@@ -14,8 +14,8 @@ from System.Windows.Media.Imaging import *
 from Bases import *
 
 class TextBoxPage(PageBase):
-    def __init__(self):
-        super().__init__(__name__)
+    def __init__(self, mainWindow):
+        super().__init__(__name__, mainWindow)
 
     def initializeComponents(self):
         self.textBox = self.getObject("TextBox")

@@ -22,7 +22,7 @@ def main():
     app.Resources.MergedDictionaries.Add(rd1)
     app.Resources.MergedDictionaries.Add(rd2)
     app.Resources.MergedDictionaries.Add(rd3)
-    app.Run(MainWindow(app).object())
+    app.Run(MainWindow(app).root())
 
 if __name__ == '__main__':
     thread = Thread(ThreadStart(main))

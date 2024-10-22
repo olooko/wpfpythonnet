@@ -8,14 +8,18 @@ from System.Windows.Controls import *
 from System.Windows.Markup import *
 
 class PageBase(Page):
-    def __init__(self, name):
+    def __init__(self, name, mainWindow):
         self.xaml = XamlReader.Load(StreamReader("%s.xaml" % name.replace(".", "\\")).BaseStream)
-
-    def object(self):
         self.initializeComponents()
+        self.mainWindow = mainWindow
+
+    def root(self):
         return self.xaml
 
     def initializeComponents(self):
+        pass
+
+    def extraDataReceived(self, extraData):
         pass
 
     def getObject(self, name):

@@ -4,36 +4,27 @@
         Background="{DynamicResource ColorNeutralBackground1Brush}"
         Height="450" Width="800"
         x:Name="MainWindow">
-    <!--
-    <Window.Resources>
-        <Storyboard x:Key="ShowToast" Completed="ShowToast_Completed">
-            <DoubleAnimation AutoReverse="True" Duration="0:0:4.0" Storyboard.TargetName="ToastContainer" Storyboard.TargetProperty="Opacity" From="0" To="1">
-                <DoubleAnimation.EasingFunction>
-                    <PowerEase Power="10" EasingMode="EaseOut"/>
-                </DoubleAnimation.EasingFunction>
-            </DoubleAnimation>
-        </Storyboard>
-    </Window.Resources>
-    -->
     <Grid Margin="7">
         <ComboBox x:Name="ThemeTypeList" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" SelectedIndex="0" />
         <ListBox x:Name="ContentList" Margin="0,40,0,0" HorizontalAlignment="Left" Width="200" SelectionMode="Single" />
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="205,0,0,0" />
+
+
         <Rectangle x:Name="DialogDimmed" Fill="Black" Opacity="0.7" Visibility="Hidden" />
-        <Grid x:Name="PopupContainer" Visibility="Hidden">
+        <Grid x:Name="PopupContent" Visibility="Hidden">
             <Rectangle Fill="Black" Opacity="0.7" />
         </Grid>
-        <StackPanel x:Name="ToastContainer" Visibility="Hidden">
-            <StackPanel.Style>
-                <Style TargetType="StackPanel">
+        <Border x:Name="ToastContent" Visibility="Hidden" Background="{DynamicResource ColorNeutralBackgroundInvertedBrush}" Padding="7" CornerRadius="4">
+            <Border.Style>
+                <Style TargetType="Border">
                     <Setter Property="VerticalAlignment" Value="Bottom" />
                     <Setter Property="HorizontalAlignment" Value="Center" />
                     <Setter Property="Margin" Value="0,0,0,14" />
                 </Style>
-            </StackPanel.Style>
-            <Border Background="Gray" Padding="7">
-                <TextBlock x:Name="ToastMessage" />
-            </Border>
-        </StackPanel>
+            </Border.Style>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="ToastMessage" Foreground="{DynamicResource ColorNeutralForegroundInvertedBrush}" />
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

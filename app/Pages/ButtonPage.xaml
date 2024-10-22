@@ -8,10 +8,10 @@
                     <ColumnDefinition Width="4" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Command="{Binding ButtonClickCommand}" Width="90">
+                <Button Width="90">
                     <TextBlock Text="Default" />
                 </Button>
-                <Button Command="{Binding ButtonClickCommand}" Width="90" Grid.Column="2" IsEnabled="False">
+                <Button Width="90" Grid.Column="2" IsEnabled="False">
                     <TextBlock Text="Disabled" />
                 </Button>
             </Grid>
@@ -22,10 +22,10 @@
                     <ColumnDefinition Width="4" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Style="{StaticResource Type1BrandButton}" Command="{Binding ButtonClickCommand}" Width="90">
+                <Button Style="{StaticResource Type1BrandButton}" Width="90">
                     <TextBlock Text="Brand Type1" />
                 </Button>
-                <Button Style="{StaticResource Type1BrandButton}" Command="{Binding ButtonClickCommand}" Width="90" Grid.Column="2" IsEnabled="False">
+                <Button Style="{StaticResource Type1BrandButton}" Width="90" Grid.Column="2" IsEnabled="False">
                     <TextBlock Text="Disabled" />
                 </Button>
             </Grid>
@@ -36,10 +36,10 @@
                     <ColumnDefinition Width="4" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Style="{StaticResource Type2BrandButton}" Command="{Binding ButtonClickCommand}" Width="90">
+                <Button Style="{StaticResource Type2BrandButton}" Width="90">
                     <TextBlock Text="Brand Type2" />
                 </Button>
-                <Button Style="{StaticResource Type2BrandButton}" Command="{Binding ButtonClickCommand}" Width="90" Grid.Column="2" IsEnabled="False">
+                <Button Style="{StaticResource Type2BrandButton}" Width="90" Grid.Column="2" IsEnabled="False">
                     <TextBlock Text="Disabled" />
                 </Button>
             </Grid>
@@ -50,10 +50,10 @@
                     <ColumnDefinition Width="4" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Style="{StaticResource LinkButton}" Command="{Binding ButtonClickCommand}" Width="90">
+                <Button Style="{StaticResource LinkButton}" Width="90">
                     <TextBlock Text="Brand Type2" />
                 </Button>
-                <Button Style="{StaticResource LinkButton}" Command="{Binding ButtonClickCommand}" Width="90" Grid.Column="2" IsEnabled="False">
+                <Button Style="{StaticResource LinkButton}" Width="90" Grid.Column="2" IsEnabled="False">
                     <TextBlock Text="Disabled" />
                 </Button>
             </Grid>
