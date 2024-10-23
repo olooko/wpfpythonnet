@@ -88,6 +88,7 @@ class MainWindow(WindowBase):
         contents.Add("TextBox")
         contents.Add("Toast")
         contents.Add("Navigate With ExtraData")
+        contents.Add("Control With Animation")
         self.contentList.ItemsSource = contents
 
         self.navigate(IndexPage(self))
@@ -117,3 +118,5 @@ class MainWindow(WindowBase):
                 self.navigate(ToastPage(self))
             case 4:
                 self.navigate(ExtraDataFirstPage(self))
+            case 5:
+                self.navigate(ControlWithAnimationPage(self))

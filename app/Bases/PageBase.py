@@ -24,3 +24,6 @@ class PageBase(Page):
 
     def getObject(self, name):
         return LogicalTreeHelper.FindLogicalNode(self.xaml, name)
+
+    def getResource(self, key):
+        return self.xaml.Resources[key]
