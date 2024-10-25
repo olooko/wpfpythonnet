@@ -8,14 +8,14 @@ from System.Windows.Markup import *
 
 class WindowBase(Window):
     def __init__(self, name):
-        self.xaml = XamlReader.Load(StreamReader("%s.xaml" % name).BaseStream)
+        self.xamlRoot = XamlReader.Load(StreamReader("%s.xaml" % name).BaseStream)
         self.initializeComponents()
 
     def root(self):
-        return self.xaml
+        return self.xamlRoot
 
     def initializeComponents(self):
         pass
 
     def getObject(self, name):
-        return LogicalTreeHelper.FindLogicalNode(self.xaml, name)
+        return LogicalTreeHelper.FindLogicalNode(self.xamlRoot, name)

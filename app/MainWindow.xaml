@@ -4,11 +4,12 @@
         Background="{DynamicResource ColorNeutralBackground1Brush}"
         Height="450" Width="800"
         x:Name="MainWindow">
-    <Grid Margin="7">
-        <ComboBox x:Name="ThemeTypeList" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" SelectedIndex="0" />
-        <ListBox x:Name="ContentList" Margin="0,40,0,0" HorizontalAlignment="Left" Width="200" SelectionMode="Single" />
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="205,0,0,0" />
-
+    <Grid>
+        <Grid Margin="7">
+            <ComboBox x:Name="ThemeTypeList" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" SelectedIndex="0" />
+            <ListBox x:Name="ContentList" Margin="0,40,0,0" HorizontalAlignment="Left" Width="200" SelectionMode="Single" />
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="205,0,0,0" />
+        </Grid>
 
         <Rectangle x:Name="DialogDimmed" Fill="Black" Opacity="0.7" Visibility="Hidden" />
         <Grid x:Name="PopupContent" Visibility="Hidden">

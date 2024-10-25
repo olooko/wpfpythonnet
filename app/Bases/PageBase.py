@@ -9,12 +9,12 @@ from System.Windows.Markup import *
 
 class PageBase(Page):
     def __init__(self, name, mainWindow):
-        self.xaml = XamlReader.Load(StreamReader("%s.xaml" % name.replace(".", "\\")).BaseStream)
+        self.xamlRoot = XamlReader.Load(StreamReader("%s.xaml" % name.replace(".", "\\")).BaseStream)
         self.initializeComponents()
         self.mainWindow = mainWindow
 
     def root(self):
-        return self.xaml
+        return self.xamlRoot
 
     def initializeComponents(self):
         pass
@@ -23,7 +23,7 @@ class PageBase(Page):
         pass
 
     def getObject(self, name):
-        return LogicalTreeHelper.FindLogicalNode(self.xaml, name)
+        return LogicalTreeHelper.FindLogicalNode(self.xamlRoot, name)
 
     def getResource(self, key):
-        return self.xaml.Resources[key]
+        return self.xamlRoot.Resources[key]
