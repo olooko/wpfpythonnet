@@ -19,6 +19,8 @@ class MainWindowViewModel(INotifyPropertyChanged):
     __namespace__ = "WpfPythonnet"
 
     def __init__(self):
+        #super().__init__(self)
+        self.PropertyChanged = PropertyChangedEventHandler(None)
         self.text = "hello!"
 
     @property
@@ -30,12 +32,18 @@ class MainWindowViewModel(INotifyPropertyChanged):
         self.__text = value
         self.OnPropertyChanged("text")
 
+    '''
+    def add_PropertyChanged(self, handler):
+        self.event_handlers.append(handler)
+        print('hahaha')
 
+    def remove_PropertyChanged(self, handler):
+        self.event_handlers.remove(handler)
+    '''
 
     def OnPropertyChanged(self, propertyName):
-        super.PropertyChanged.Invoke(self, PropertyChangedEventArgs(propertyName))
-
-
+        pass
+        #self.PropertyChanged(self, PropertyChangedEventArgs(propertyName))
 
 class MainWindow(Window):
     def __init__(self):
