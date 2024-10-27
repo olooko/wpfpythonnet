@@ -85,10 +85,14 @@ class MainWindow(WindowBase):
         contents = List[String]()
         contents.Add("Color")
         contents.Add("Button")
+        contents.Add("RadioButton")
+        contents.Add("CheckBox")
         contents.Add("TextBox")
         contents.Add("Toast")
         contents.Add("Navigate With ExtraData")
         contents.Add("Control With Animation")
+        contents.Add("Dialog")
+        contents.Add("Multiple Languages")
         self.contentList.ItemsSource = contents
 
         self.navigate(IndexPage(self))
@@ -113,10 +117,16 @@ class MainWindow(WindowBase):
             case 1:
                 self.navigate(ButtonPage(self))
             case 2:
-                self.navigate(TextBoxPage(self))
+                #self.navigate(RadioButtonPage(self))
+                pass
             case 3:
-                self.navigate(ToastPage(self))
+                #self.navigate(CheckBoxPage(self))
+                pass
             case 4:
-                self.navigate(ExtraDataFirstPage(self))
+                self.navigate(TextBoxPage(self))
             case 5:
+                self.navigate(ToastPage(self))
+            case 6:
+                self.navigate(ExtraDataFirstPage(self))
+            case 7:
                 self.navigate(ControlWithAnimationPage(self))

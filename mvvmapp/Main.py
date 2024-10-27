@@ -16,16 +16,24 @@ from System.Threading import *
 from System.Windows import *
 
 class MainWindowViewModel(INotifyPropertyChanged):
+    __namespace__ = "WpfPythonnet"
+
     def __init__(self):
         self.text = "hello!"
-        #self.propertyChangedHandlers = []
-        #self.PropertyChanged, self._propertyChangedCaller = pyevent.make_event()
+
+    @property
+    def text(self):
+        return self.__text
+
+    @text.setter
+    def text(self, value):
+        self.__text = value
+        self.OnPropertyChanged("text")
+
 
 
     def OnPropertyChanged(self, propertyName):
-        #if self.PropertyChanged is not None:
-        #    self.PropertyChanged.Invoke(self, PropertyChangedEventArgs(propertyName))
-        pass
+        super.PropertyChanged.Invoke(self, PropertyChangedEventArgs(propertyName))
 
 
 
