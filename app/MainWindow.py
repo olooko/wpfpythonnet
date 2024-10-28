@@ -28,8 +28,10 @@ class MainWindow(WindowBase):
         self.themeTypeList.SelectionChanged += RoutedEventHandler(self.themeTypeList_SelectionChanged)
         self.contentList = self.getObject("ContentList")
         self.contentList.SelectionChanged += RoutedEventHandler(self.contentList_SelectionChanged)
+        self.dialogConent = self.getObject("DialogContent")
         self.toastContent = self.getObject("ToastContent")
         self.toastMessage = self.getObject("ToastMessage")
+
 
     def navigate(self, page, extraData = None):
         self.mainFrame.Navigate(page.root())
@@ -40,6 +42,15 @@ class MainWindow(WindowBase):
 
     def refresh(self):
         self.mainFrame.Refresh()
+
+    def showModal(self):
+        self.dialogContent.Children.Add()
+
+        #bool result = await dialogBase.ShowModal();
+
+        #dialogContent.Children.Remove(dialogBase);
+
+        #return result;
 
     def showToast(self, message):
         self.toastMessage.Text = message

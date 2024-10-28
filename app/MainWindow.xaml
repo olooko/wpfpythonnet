@@ -11,10 +11,8 @@
             <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="205,0,0,0" />
         </Grid>
 
-        <Rectangle x:Name="DialogDimmed" Fill="Black" Opacity="0.7" Visibility="Hidden" />
-        <Grid x:Name="PopupContent" Visibility="Hidden">
-            <Rectangle Fill="Black" Opacity="0.7" />
-        </Grid>
+        <Grid x:Name="DialogContent" Visibility="Hidden" Background="{DynamicResource ColorBackgroundOverlayBrush}" />
+
         <Border x:Name="ToastContent" Visibility="Hidden" Background="{DynamicResource ColorNeutralBackgroundInvertedBrush}" Padding="7" CornerRadius="4">
             <Border.Style>
                 <Style TargetType="Border">

@@ -13,14 +13,19 @@ from System.Windows.Media.Imaging import *
 from Bases import *
 from Dialogs import *
 
-class DialogPage(PageBase):
+class SampleDialog(DialogBase):
     def __init__(self, mainWindow):
         super().__init__(__name__, mainWindow)
         self.mainWindow = mainWindow
 
     def initializeComponents(self):
-        self.button = self.getObject("Button")
-        self.button.Click += RoutedEventHandler(self.button_Click)
+        self.okButton = self.getObject("OkButton")
+        self.okButton.Click += RoutedEventHandler(self.okButton_Click)
+        self.cancelButton = self.getObject("CancelButton")
+        self.cancelButton.Click += RoutedEventHandler(self.cancelButton_Click)
 
-    def button_Click(self, sender, e):
-        self.mainWindow.showModal(SampleDialog(self.mainWindow))
+    def okButton_Click(self, sender, e):
+        pass
+
+    def cancelButton_Click(self, sender, e):
+        pass
