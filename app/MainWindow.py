@@ -117,11 +117,9 @@ class MainWindow(WindowBase):
             case 1:
                 self.navigate(ButtonPage(self))
             case 2:
-                #self.navigate(RadioButtonPage(self))
-                pass
+                self.navigate(RadioButtonPage(self))
             case 3:
-                #self.navigate(CheckBoxPage(self))
-                pass
+                self.navigate(CheckBoxPage(self))
             case 4:
                 self.navigate(TextBoxPage(self))
             case 5:
@@ -130,3 +128,7 @@ class MainWindow(WindowBase):
                 self.navigate(ExtraDataFirstPage(self))
             case 7:
                 self.navigate(ControlWithAnimationPage(self))
+            case 8:
+                self.navigate(DialogPage(self))
+            case 7:
+                self.navigate(MultiLangPage(self))

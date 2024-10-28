@@ -14,7 +14,7 @@
                                             <ControlTemplate TargetType="{x:Type ToggleButton}">
                                                 <Grid>
                                                     <Border x:Name="Border" CornerRadius="4" BorderThickness="1" BorderBrush="{DynamicResource ColorNeutralStroke1Brush}" Background="{DynamicResource ColorNeutralBackground1Brush}">
-                                                        <Path Margin="0,0,9,0" Fill="{DynamicResource ColorNeutralStroke1Brush}" VerticalAlignment="Center" HorizontalAlignment="Right" Data="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                                                        <Path Margin="0,0,9,0" Stroke="{DynamicResource ColorNeutralStroke1Brush}" VerticalAlignment="Center" HorizontalAlignment="Right" Data="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                                                     </Border>
                                                 </Grid>
                                                 <ControlTemplate.Triggers>
@@ -364,7 +364,7 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="Type1BrandButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+    <Style x:Key="BrandType1Button" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Foreground" Value="{DynamicResource ColorNeutralForegroundOnBrandBrush}" />
         <Setter Property="Background" Value="{DynamicResource ColorBrandBackgroundBrush}" />
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -387,8 +387,8 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
-    <Style x:Key="Type2BrandButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+
+    <Style x:Key="BrandType2Button" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Foreground" Value="{DynamicResource ColorBrandForeground2Brush}" />
         <Setter Property="Background" Value="{DynamicResource ColorBrandBackground2Brush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource ColorBrandStroke2Brush}" />
@@ -445,22 +445,167 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type RadioButton}">
+    <Style TargetType="{x:Type PasswordBox}">
+        <Setter Property="Foreground" Value="{DynamicResource ColorNeutralForeground1Brush}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type RadioButton}">
-                    <StackPanel Orientation="Horizontal">
-                        <Ellipse x:Name="Circle" Width="22" Height="22" Stroke="{DynamicResource ColorNeutralForeground1Brush}" StrokeThickness="1" />
-                        <ContentPresenter />
-                    </StackPanel>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <Border x:Name="Border" CornerRadius="4" Padding="4,7,4,7" BorderThickness="1" BorderBrush="{DynamicResource ColorNeutralStroke1Brush}">
+                        <Grid>
+                            <ScrollViewer Margin="0" x:Name="PART_ContentHost" Background="{DynamicResource ColorNeutralBackground1Brush}" />
+                        </Grid>
+                    </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Circle" Property="Fill" Value="{DynamicResource ColorNeutralForeground1Brush}" />
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="Border" Property="Border.BorderBrush" Value="{DynamicResource ColorBrandStroke1Brush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
+    <Style TargetType="{x:Type RadioButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <StackPanel Orientation="Horizontal" Background="#01000000">
+                        <Grid Width="16" Height="16">
+                            <Ellipse x:Name="Border" Stroke="{DynamicResource ColorNeutralForeground1Brush}" StrokeThickness="1" />
+                            <Ellipse x:Name="Mark" Fill="Transparent" Margin="3" />
+                        </Grid>
+                        <ContentPresenter Margin="4,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" RecognizesAccessKey="True" />
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Border" Property="Stroke" Value="{DynamicResource ColorBrandForeground2Brush}" />
+                            <Setter TargetName="Mark" Property="Fill" Value="{DynamicResource ColorBrandForeground2Brush}" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="False" />
+                                <Condition Property="IsEnabled" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Border" Property="Stroke" Value="{DynamicResource ColorNeutralForegroundDisabledBrush}" />
+                            <Setter TargetName="Mark" Property="Fill" Value="Transparent" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsEnabled" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Border" Property="Stroke" Value="{DynamicResource ColorNeutralForegroundDisabledBrush}" />
+                            <Setter TargetName="Mark" Property="Fill" Value="{DynamicResource ColorNeutralForegroundDisabledBrush}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="False" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Border" Property="Stroke" Value="{DynamicResource ColorNeutralForeground1HoverBrush}" />
+                            <Setter TargetName="Mark" Property="Fill" Value="Transparent" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Border" Property="Stroke" Value="{DynamicResource ColorBrandForeground2HoverBrush}" />
+                            <Setter TargetName="Mark" Property="Fill" Value="{DynamicResource ColorBrandForeground2HoverBrush}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="False" />
+                                <Condition Property="IsPressed" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Border" Property="Stroke" Value="{DynamicResource ColorNeutralForeground1PressedBrush}" />
+                            <Setter TargetName="Mark" Property="Fill" Value="Transparent" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsPressed" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Border" Property="Stroke" Value="{DynamicResource ColorBrandForeground2PressedBrush}" />
+                            <Setter TargetName="Mark" Property="Fill" Value="{DynamicResource ColorBrandForeground2PressedBrush}" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type CheckBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <StackPanel Orientation="Horizontal" Background="#01000000">
+                        <Grid x:Name="Unchecked" Width="16" Height="16" Visibility="Visible">
+                            <Path x:Name="UncheckedMark" Fill="{DynamicResource ColorNeutralForeground1Brush}" Data="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                        </Grid>
+                        <Grid x:Name="Checked" Width="16" Height="16" Visibility="Collapsed">
+                            <Path x:Name="CheckedMark" Fill="{DynamicResource ColorNeutralForeground1Brush}" Data="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </Grid>
+                        <ContentPresenter Margin="4,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" RecognizesAccessKey="True" />
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Unchecked" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="Checked" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="CheckedMark" Property="Fill" Value="{DynamicResource ColorBrandForeground2Brush}" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="False" />
+                                <Condition Property="IsEnabled" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="UncheckedMark" Property="Fill" Value="{DynamicResource ColorNeutralForegroundDisabledBrush}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsEnabled" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Unchecked" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="Checked" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="CheckedMark" Property="Fill" Value="{DynamicResource ColorNeutralForegroundDisabledBrush}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="False" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="UncheckedMark" Property="Fill" Value="{DynamicResource ColorNeutralForeground1HoverBrush}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Unchecked" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="Checked" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="CheckedMark" Property="Fill" Value="{DynamicResource ColorBrandForeground2HoverBrush}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="False" />
+                                <Condition Property="IsPressed" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="UncheckedMark" Property="Fill" Value="{DynamicResource ColorNeutralForeground1PressedBrush}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsPressed" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Unchecked" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="Checked" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="CheckedMark" Property="Fill" Value="{DynamicResource ColorBrandForeground2PressedBrush}" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

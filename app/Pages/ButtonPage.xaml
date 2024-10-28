@@ -22,10 +22,10 @@
                     <ColumnDefinition Width="4" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Style="{StaticResource Type1BrandButton}" Width="90">
+                <Button Style="{StaticResource BrandType1Button}" Width="90">
                     <TextBlock Text="Brand Type1" />
                 </Button>
-                <Button Style="{StaticResource Type1BrandButton}" Width="90" Grid.Column="2" IsEnabled="False">
+                <Button Style="{StaticResource BrandType1Button}" Width="90" Grid.Column="2" IsEnabled="False">
                     <TextBlock Text="Disabled" />
                 </Button>
             </Grid>
@@ -36,10 +36,10 @@
                     <ColumnDefinition Width="4" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Style="{StaticResource Type2BrandButton}" Width="90">
+                <Button Style="{StaticResource BrandType2Button}" Width="90">
                     <TextBlock Text="Brand Type2" />
                 </Button>
-                <Button Style="{StaticResource Type2BrandButton}" Width="90" Grid.Column="2" IsEnabled="False">
+                <Button Style="{StaticResource BrandType2Button}" Width="90" Grid.Column="2" IsEnabled="False">
                     <TextBlock Text="Disabled" />
                 </Button>
             </Grid>
