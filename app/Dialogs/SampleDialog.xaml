@@ -1,12 +1,13 @@
 ﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             Background="{DynamicResource ColorNeutralBackground1Brush}">
+             Background="{DynamicResource ColorNeutralBackground1Brush}"
+             Height="300" Width="400">
     <Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="OkButton" Style="{DynamicResource BrandType1Button}">
                 <TextBlock Text="OK" />
             </Button>
-            <Button x:Name="CancelButton" Click="CancelButton_Click">
+            <Button x:Name="CancelButton">
                 <TextBlock Text="Cancel" />
             </Button>
         </StackPanel>

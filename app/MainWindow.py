@@ -28,7 +28,7 @@ class MainWindow(WindowBase):
         self.themeTypeList.SelectionChanged += RoutedEventHandler(self.themeTypeList_SelectionChanged)
         self.contentList = self.getObject("ContentList")
         self.contentList.SelectionChanged += RoutedEventHandler(self.contentList_SelectionChanged)
-        self.dialogConent = self.getObject("DialogContent")
+        self.dialogContent = self.getObject("DialogContent")
         self.toastContent = self.getObject("ToastContent")
         self.toastMessage = self.getObject("ToastMessage")
 
@@ -43,14 +43,13 @@ class MainWindow(WindowBase):
     def refresh(self):
         self.mainFrame.Refresh()
 
-    def showModal(self):
-        self.dialogContent.Children.Add()
-
-        #bool result = await dialogBase.ShowModal();
-
-        #dialogContent.Children.Remove(dialogBase);
-
-        #return result;
+    def showModal(self, dialogBase):
+        self.dialogContent.Visibility = Visibility.Visible
+        self.dialogContent.Children.Add(dialogBase.root())
+        result = dialogBase.wait()
+        self.dialogContent.Visibility = Visibility.Collapsed
+        self.dialogContent.Children.Remove(dialogBase.root())
+        return result
 
     def showToast(self, message):
         self.toastMessage.Text = message
@@ -103,7 +102,6 @@ class MainWindow(WindowBase):
         contents.Add("Navigate With ExtraData")
         contents.Add("Control With Animation")
         contents.Add("Dialog")
-        contents.Add("Multiple Languages")
         self.contentList.ItemsSource = contents
 
         self.navigate(IndexPage(self))
@@ -141,5 +139,3 @@ class MainWindow(WindowBase):
                 self.navigate(ControlWithAnimationPage(self))
             case 8:
                 self.navigate(DialogPage(self))
-            case 7:
-                self.navigate(MultiLangPage(self))

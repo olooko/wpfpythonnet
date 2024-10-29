@@ -6,6 +6,7 @@ clr.AddReference(r"wpf\PresentationCore")
 from System import *
 from System.IO import *
 from System.Reflection import *
+from System.Windows import *
 from System.Windows.Controls import *
 from System.Windows.Markup import *
 from System.Windows.Media.Imaging import *
@@ -23,4 +24,5 @@ class DialogPage(PageBase):
         self.button.Click += RoutedEventHandler(self.button_Click)
 
     def button_Click(self, sender, e):
-        self.mainWindow.showModal(SampleDialog(self.mainWindow))
+        result = self.mainWindow.showModal(SampleDialog(self.mainWindow))
+        #MessageBox.Show(result)
