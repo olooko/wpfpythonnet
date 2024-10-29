@@ -1,21 +1,21 @@
-﻿import os
 import clr
 clr.AddReference(r"wpf\PresentationFramework")
 clr.AddReference(r"wpf\PresentationCore")
 
 from System import *
+from System.Collections.Generic import *
 from System.IO import *
-from System.Reflection import *
 from System.Windows import *
 from System.Windows.Controls import *
+from System.Windows.Data import *
 from System.Windows.Markup import *
-from System.Windows.Media.Imaging import *
+from System.Windows.Media.Animation import *
 
 from Bases import *
 
-class SampleDialog(DialogBase):
-    def __init__(self, mainWindow):
-        super().__init__(__name__, mainWindow)
+class SampleWindow(WindowBase):
+    def __init__(self):
+        super().__init__(__name__)
 
     def initializeComponents(self):
         self.okButton = self.getObject("OkButton")

@@ -7,7 +7,7 @@ from System.Windows import *
 from System.Windows.Controls import *
 from System.Windows.Markup import *
 
-class PageBase(Page):
+class PageBase(Object):
     def __init__(self, name, mainWindow):
         self.xamlRoot = XamlReader.Load(StreamReader("%s.xaml" % name.replace(".", "\\")).BaseStream)
         self.initializeComponents()

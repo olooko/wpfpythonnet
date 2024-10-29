@@ -1,4 +1,3 @@
-import os
 import clr
 from System import *
 from System.IO import *

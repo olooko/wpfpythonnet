@@ -8,4 +8,4 @@ from .ToastPage import ToastPage
 from .ExtraDataSecondPage import ExtraDataSecondPage
 from .ExtraDataFirstPage import ExtraDataFirstPage
 from .ControlWithAnimationPage import ControlWithAnimationPage
-from .DialogPage import DialogPage
+from .WindowPage import WindowPage

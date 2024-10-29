@@ -46,7 +46,7 @@ class MainWindow(WindowBase):
     def showModal(self, dialogBase):
         self.dialogContent.Visibility = Visibility.Visible
         self.dialogContent.Children.Add(dialogBase.root())
-        result = dialogBase.wait()
+        result = dialogBase.waitAsync()
         self.dialogContent.Visibility = Visibility.Collapsed
         self.dialogContent.Children.Remove(dialogBase.root())
         return result
@@ -101,7 +101,7 @@ class MainWindow(WindowBase):
         contents.Add("Toast")
         contents.Add("Navigate With ExtraData")
         contents.Add("Control With Animation")
-        contents.Add("Dialog")
+        contents.Add("Window")
         self.contentList.ItemsSource = contents
 
         self.navigate(IndexPage(self))
@@ -138,4 +138,4 @@ class MainWindow(WindowBase):
             case 7:
                 self.navigate(ControlWithAnimationPage(self))
             case 8:
-                self.navigate(DialogPage(self))
+                self.navigate(WindowPage(self))
