@@ -9,3 +9,4 @@ from .ExtraDataSecondPage import ExtraDataSecondPage
 from .ExtraDataFirstPage import ExtraDataFirstPage
 from .ControlWithAnimationPage import ControlWithAnimationPage
 from .WindowPage import WindowPage
+from .MvvmPage import MvvmPage

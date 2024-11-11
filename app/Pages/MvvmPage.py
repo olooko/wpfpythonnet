@@ -1,7 +1,11 @@
-﻿import os
+import sys
+sys.path.append("C:\\Users\\hskim\\Desktop\\beaverworks\\wf_pythonnet\\dll")
+
+import os
 import clr
 clr.AddReference(r"wpf\PresentationFramework")
 clr.AddReference(r"wpf\PresentationCore")
+clr.AddReference("ClassLibrary1")
 
 from System import *
 from System.IO import *
@@ -12,21 +16,18 @@ from System.Windows import *
 from System.Windows.Controls import *
 from System.Windows.Markup import *
 from System.Windows.Media.Imaging import *
+from ClassLibrary1 import *
 
 from Bases import *
 from Windows import *
 
-class WindowPage(PageBase):
+class MvvmPage(PageBase):
     def __init__(self, mainWindow):
         path = os.path.dirname(os.path.realpath(__file__))
-        super().__init__(os.path.join(path, "WindowPage.xaml"), mainWindow)
+        super().__init__(os.path.join(path, "MvvmPage.xaml"), mainWindow)
         self.mainWindow = mainWindow
 
     def initializeComponents(self):
-        self.button = self.getObject("Button")
-        self.button.Click += RoutedEventHandler(self.button_Click)
+        self.root().DataContext = MvvmPageViewModel()
 
-    def button_Click(self, sender, e):
-        w = SampleWindow()
-        result = w.showDialog()
-        MessageBox.Show(str(result))
+
