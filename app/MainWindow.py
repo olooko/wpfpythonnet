@@ -17,7 +17,8 @@ from Pages import *
 
 class MainWindow(WindowBase):
     def __init__(self, app):
-        super().__init__(__name__)
+        path = os.path.dirname(os.path.realpath(__file__))
+        super().__init__(os.path.join(path, "MainWindow.xaml"))
         self.__app = app
 
     def initializeComponents(self):
@@ -78,10 +79,11 @@ class MainWindow(WindowBase):
         self.toastContent.Visibility = Visibility.Hidden
 
     def changeTheme(self, theme):
+        path = os.path.dirname(os.path.realpath(__file__))
         self.__app.Resources.MergedDictionaries[0].Source = Uri(
-            os.path.join(Directory.GetCurrentDirectory(), "Styles", "Colors%s.xaml" % theme))
+            os.path.join(path, "Styles", "Colors%s.xaml" % theme))
         self.__app.Resources.MergedDictionaries[1].Source = Uri(
-            os.path.join(Directory.GetCurrentDirectory(), "Styles", "Brushes.xaml"))
+            os.path.join(path, "Styles", "Brushes.xaml"))
 
     def mainWindow_Loaded(self, sender, e):
         themeTypes = List[String]()

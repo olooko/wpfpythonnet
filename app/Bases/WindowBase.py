@@ -7,8 +7,8 @@ from System.Windows import *
 from System.Windows.Markup import *
 
 class WindowBase(Object):
-    def __init__(self, name):
-        self.xamlRoot = XamlReader.Load(StreamReader("%s.xaml" % name.replace(".", "\\")).BaseStream)
+    def __init__(self, xamlpath):
+        self.xamlRoot = XamlReader.Load(StreamReader(xamlpath).BaseStream)
         self.initializeComponents()
 
     def root(self):

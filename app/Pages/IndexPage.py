@@ -15,8 +15,10 @@ from Bases import *
 
 class IndexPage(PageBase):
     def __init__(self, mainWindow):
-        super().__init__(__name__, mainWindow)
+        path = os.path.dirname(os.path.realpath(__file__))
+        super().__init__(os.path.join(path, "IndexPage.xaml"), mainWindow)
 
     def initializeComponents(self):
+        path = os.path.dirname(os.path.realpath(__file__))
         self.image = self.getObject("Image")
-        self.image.Source = BitmapImage(Uri(os.path.join(Directory.GetCurrentDirectory(), "Images", "WPF_splash.png")))
+        self.image.Source = BitmapImage(Uri(os.path.join(path, "..", "Images", "WPF_splash.png")))

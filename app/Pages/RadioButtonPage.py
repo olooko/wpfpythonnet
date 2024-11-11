@@ -15,7 +15,8 @@ from Bases import *
 
 class RadioButtonPage(PageBase):
     def __init__(self, mainWindow):
-        super().__init__(__name__, mainWindow)
+        path = os.path.dirname(os.path.realpath(__file__))
+        super().__init__(os.path.join(path, "RadioButtonPage.xaml"), mainWindow)
 
     def initializeComponents(self):
         self.radioButton1 = self.getObject("RadioButton1")

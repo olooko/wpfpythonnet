@@ -1,3 +1,4 @@
+import os
 import clr
 clr.AddReference(r"wpf\PresentationFramework")
 clr.AddReference(r"wpf\PresentationCore")
@@ -15,7 +16,8 @@ from Bases import *
 
 class SampleWindow(WindowBase):
     def __init__(self):
-        super().__init__(__name__)
+        path = os.path.dirname(os.path.realpath(__file__))
+        super().__init__(os.path.join(path, "SampleWindow.xaml"))
 
     def initializeComponents(self):
         self.okButton = self.getObject("OkButton")

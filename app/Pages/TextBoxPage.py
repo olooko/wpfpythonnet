@@ -15,7 +15,8 @@ from Bases import *
 
 class TextBoxPage(PageBase):
     def __init__(self, mainWindow):
-        super().__init__(__name__, mainWindow)
+        path = os.path.dirname(os.path.realpath(__file__))
+        super().__init__(os.path.join(path, "TextBoxPage.xaml"), mainWindow)
 
     def initializeComponents(self):
         self.textBox = self.getObject("TextBox")

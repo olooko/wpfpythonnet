@@ -19,7 +19,8 @@ from Windows import *
 
 class WindowPage(PageBase):
     def __init__(self, mainWindow):
-        super().__init__(__name__, mainWindow)
+        path = os.path.dirname(os.path.realpath(__file__))
+        super().__init__(os.path.join(path, "WindowPage.xaml"), mainWindow)
         self.mainWindow = mainWindow
 
     def initializeComponents(self):

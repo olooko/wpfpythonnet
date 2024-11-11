@@ -1,3 +1,4 @@
+import os
 import clr
 from System import *
 from System.IO import *
@@ -7,15 +8,16 @@ from System.Windows import *
 from MainWindow import *
 
 def main():
+    path = os.path.dirname(os.path.realpath(__file__))
     app = Application()
     rd0 = ResourceDictionary()
-    rd0.Source = Uri(os.path.join(Directory.GetCurrentDirectory(), "Styles", "ColorsLight.xaml"))
+    rd0.Source = Uri(os.path.join(path, "Styles", "ColorsLight.xaml"))
     rd1 = ResourceDictionary()
-    rd1.Source = Uri(os.path.join(Directory.GetCurrentDirectory(), "Styles", "Brushes.xaml"))
+    rd1.Source = Uri(os.path.join(path, "Styles", "Brushes.xaml"))
     rd2 = ResourceDictionary()
-    rd2.Source = Uri(os.path.join(Directory.GetCurrentDirectory(), "Styles", "Fonts.xaml"))
+    rd2.Source = Uri(os.path.join(path, "Styles", "Fonts.xaml"))
     rd3 = ResourceDictionary()
-    rd3.Source = Uri(os.path.join(Directory.GetCurrentDirectory(), "Styles", "Styles.xaml"))
+    rd3.Source = Uri(os.path.join(path, "Styles", "Styles.xaml"))
     app.Resources.MergedDictionaries.Add(rd0)
     app.Resources.MergedDictionaries.Add(rd1)
     app.Resources.MergedDictionaries.Add(rd2)

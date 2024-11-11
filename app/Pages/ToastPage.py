@@ -1,4 +1,5 @@
-﻿import clr
+﻿import os
+import clr
 clr.AddReference(r"wpf\PresentationFramework")
 clr.AddReference(r"wpf\PresentationCore")
 
@@ -14,7 +15,8 @@ from Bases import *
 
 class ToastPage(PageBase):
     def __init__(self, mainWindow):
-        super().__init__(__name__, mainWindow)
+        path = os.path.dirname(os.path.realpath(__file__))
+        super().__init__(os.path.join(path, "ToastPage.xaml"), mainWindow)
 
     def initializeComponents(self):
         self.button = self.getObject("Button")

@@ -17,7 +17,8 @@ from Pages import *
 class ControlWithAnimationPage(PageBase):
     def __init__(self, mainWindow):
         self.count = 0
-        super().__init__(__name__, mainWindow)
+        path = os.path.dirname(os.path.realpath(__file__))
+        super().__init__(os.path.join(path, "ControlWithAnimationPage.xaml"), mainWindow)
 
     def initializeComponents(self):
         self.textBlock = self.getObject("TextBlock")
