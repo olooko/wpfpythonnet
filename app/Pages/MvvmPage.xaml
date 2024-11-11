@@ -3,7 +3,7 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="{Binding PersonName}" />
-            <Button Command="{Binding ClickCommand}">Click!!</Button>
+            <Button>Click!!</Button>
         </StackPanel>
     </Grid>
 </Page>

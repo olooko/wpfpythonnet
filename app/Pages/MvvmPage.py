@@ -8,6 +8,7 @@ clr.AddReference(r"wpf\PresentationCore")
 clr.AddReference("ClassLibrary1")
 
 from System import *
+from System.ComponentModel import *
 from System.IO import *
 from System.Reflection import *
 from System.Threading import *
@@ -21,6 +22,11 @@ from ClassLibrary1 import *
 from Bases import *
 from Windows import *
 
+class MvvmPageViewModel2(MvvmPageViewModel):
+    def __init__(self):
+        pass
+
+
 class MvvmPage(PageBase):
     def __init__(self, mainWindow):
         path = os.path.dirname(os.path.realpath(__file__))
@@ -28,6 +34,6 @@ class MvvmPage(PageBase):
         self.mainWindow = mainWindow
 
     def initializeComponents(self):
-        self.root().DataContext = MvvmPageViewModel()
+        self.root().DataContext = MvvmPageViewModel2()
 
 
