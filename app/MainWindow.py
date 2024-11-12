@@ -104,7 +104,6 @@ class MainWindow(WindowBase):
         contents.Add("Navigate With ExtraData")
         contents.Add("Control With Animation")
         contents.Add("Window")
-        contents.Add("MVVM")
         self.contentList.ItemsSource = contents
 
         self.navigate(IndexPage(self))
@@ -141,6 +140,4 @@ class MainWindow(WindowBase):
             case 7:
                 self.navigate(ControlWithAnimationPage(self))
             case 8:
-                self.navigate(WindowPage(self))
-            case 9:
-                self.navigate(MvvmPage(self))    
+                self.navigate(WindowPage(self)) 
