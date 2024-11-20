@@ -3,22 +3,22 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <CheckBox x:Name="CheckBox1" IsChecked="True" Tag="1">
-                <TextBlock Text="Sample1" />
+                <TextBlock Text="Sample1" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
             </CheckBox>
             <Rectangle Height="7" />
             <CheckBox x:Name="CheckBox2" IsChecked="True" Tag="2" IsEnabled="False">
-                <TextBlock Text="Sample2" />
+                <TextBlock Text="Sample2" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
             </CheckBox>
             <Rectangle Height="7" />
             <CheckBox x:Name="CheckBox3" IsChecked="False" Tag="3">
-                <TextBlock Text="Sample3" />
+                <TextBlock Text="Sample3" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
             </CheckBox>
             <Rectangle Height="7" />
             <CheckBox x:Name="CheckBox4" IsChecked="False" Tag="4" IsEnabled="False">
-                <TextBlock Text="Sample4" />
+                <TextBlock Text="Sample4" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
             </CheckBox>
             <Rectangle Height="14" />
-            <TextBlock x:Name="CheckValue" />
+            <TextBlock x:Name="CheckValue" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
         </StackPanel>
     </Grid>
 </Page>

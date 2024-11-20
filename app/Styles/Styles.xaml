@@ -425,6 +425,11 @@
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="{x:Type RichTextBox}">
+        <Setter Property="Foreground" Value="{DynamicResource ColorNeutralForeground1Brush}" />
+        <Setter Property="Background" Value="{DynamicResource ColorNeutralBackground1Brush}" />
+    </Style>
+    
     <Style TargetType="{x:Type TextBox}">
         <Setter Property="Foreground" Value="{DynamicResource ColorNeutralForeground1Brush}" />
         <Setter Property="Template">

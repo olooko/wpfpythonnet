@@ -22,7 +22,7 @@
             <Rectangle Height="7" />
             <Button x:Name="Button" Content="Calculate with Animations" Padding="7" />
             <Rectangle Height="12" />
-            <TextBlock x:Name="TextBlock" />
+            <TextBlock x:Name="TextBlock" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
         </StackPanel>
     </Grid>
 </Page>

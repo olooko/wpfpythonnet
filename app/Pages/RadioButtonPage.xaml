@@ -3,23 +3,23 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <RadioButton x:Name="RadioButton1" GroupName="Sample" Tag="1">
-                <TextBlock Text="Sample1" />
+                <TextBlock Text="Sample1" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
             </RadioButton>
             <Rectangle Height="7" />
             <RadioButton x:Name="RadioButton2" GroupName="Sample" Tag="2">
-                <TextBlock Text="Sample2" />
+                <TextBlock Text="Sample2" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
             </RadioButton>
             <Rectangle Height="7" />
             <RadioButton x:Name="RadioButton3" GroupName="Sample" Tag="3">
-                <TextBlock Text="Sample3" />
+                <TextBlock Text="Sample3" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
             </RadioButton>
             <Rectangle Height="7" />
             <RadioButton x:Name="RadioButton4" GroupName="Sample" IsChecked="True" Tag="4">
-                <TextBlock Text="Sample4" />
+                <TextBlock Text="Sample4" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
             </RadioButton>
             <Rectangle Height="14" />
-            <TextBlock x:Name="RadioChecked" />
-            <TextBlock x:Name="RadioValue" Text="4" />
+            <TextBlock x:Name="RadioChecked" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
+            <TextBlock x:Name="RadioValue" Foreground="{DynamicResource ColorNeutralForeground1Brush}" Text="4" />
         </StackPanel>
     </Grid>
 </Page>

@@ -2,7 +2,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="TextBlock" />
+            <TextBlock x:Name="TextBlock" Foreground="{DynamicResource ColorNeutralForeground1Brush}" />
             <Rectangle Height="4" />
             <Button x:Name="Button" Content="Go Back" />
         </StackPanel>
